@@ -1,0 +1,114 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body {
+	position: relative;
+	width: 70%;
+	margin: auto;
+}
+
+h1 {
+	font-family: helvetica, arial, sans-serif; 
+	font-size: 36px; 
+	font-style: normal; 
+	font-weight: normal;
+	color: #6D838A;
+}
+
+h2 {
+	font-family: 'Varela', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	color: #bbbbbb;
+	font-weight: normal;
+}
+
+p {
+	font-family: helvetica, arial, sans-serif; 
+	font-size: 26; 
+	font-style: normal;
+	color: #666666;
+	text-align: left; 
+	font-weight: normal;
+}
+
+pre {
+	font-family: arial;
+}
+
+a:link {
+	color:#3FA4BA;
+	font-style: normal;
+	text-decoration: none;
+	font-weight: normal;
+
+} 
+
+a:visited {
+	color:#62A4B3;
+	font-style: normal;
+	text-decoration: none;
+} 
+
+a:hover {
+	color:#00C3FF;
+	font-style: normal;
+	text-decoration: none;
+} 
+
+#name {
+	font-family: 'Marcellus SC', serif;
+	font-size: 44px;
+	color: #00C7E6;
+	font-weight: normal;
+}
+
+#subhead {
+	font-weight: normal;
+}
+
+.float-left {
+	float: left;
+}
+
+.week {
+	color: #999999;
+	width: 70px;
+	font-weight: normal;
+}
+
+.line {
+	color: #bbbbbb;
+	float: left;
+	width: 15px;
+}
+
+.weeklist {
+	clear: left;
+	padding-top: 10px;
+}
+
+#divmain {
+	padding-top: 20px;
+	padding: 20px;
+}
+
+#divbody {
+	padding-top: 20px;
+}
