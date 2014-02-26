@@ -14,11 +14,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
+	font-weight: normal;
 }
 
 body {
 	position: relative;
-	width: 70%;
+	width: 80%;
 	margin: auto;
 }
 
@@ -36,11 +37,19 @@ h2 {
 	font-style: normal;
 	color: #bbbbbb;
 	font-weight: normal;
+	padding-bottom: 10px;
+}
+
+h3 {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 16px;
+	color: #3896ab;
+	padding-bottom: 10px;
 }
 
 p {
 	font-family: helvetica, arial, sans-serif; 
-	font-size: 26; 
+	font-size: 16px; 
 	font-style: normal;
 	color: #666666;
 	text-align: left; 
@@ -85,6 +94,7 @@ a:hover {
 	float: left;
 }
 
+
 .week {
 	color: #999999;
 	width: 70px;
@@ -94,6 +104,10 @@ a:hover {
 	color: #bbbbbb;
 	float: left;
 	width: 15px;
+}
+
+.content {
+	width: 80%;
 }
 
 .weeklist {
@@ -107,4 +121,9 @@ a:hover {
 
 #divbody {
 	padding-top: 20px;
+}
+
+.para {
+	padding-bottom: 10px;
+	line-height: 160%;
 }
