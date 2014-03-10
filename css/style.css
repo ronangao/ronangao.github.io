@@ -156,6 +156,15 @@ h1 #name a:visited {
 	line-height: 160%;
 }
 
+.cap {
+	font-family: helvetica, arial, sans-serif; 
+	font-size: 12px; 
+	font-style: italic;
+	color: #888888;
+	text-align: left;
+	padding-bottom: 20px;
+}
+
 .footpara {
 	font-family: helvetica, arial, sans-serif; 
 	font-size: 12px; 
@@ -165,3 +174,7 @@ h1 #name a:visited {
 	padding-bottom: 7px;
 }
 
+.pm20 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
