@@ -60,7 +60,7 @@ pre {
 }
 
 a:link {
-	color:#82AAB8;
+	color:#777777;
 	font-style: normal;
 	text-decoration: none;
 	font-weight: normal;
@@ -68,7 +68,7 @@ a:link {
 } 
 
 a:visited {
-	color:#82AAB8;
+	color:#555555;
 	font-style: normal;
 	text-decoration: none;
 } 
@@ -131,7 +131,7 @@ h1 #name a:visited {
 }
 
 .mgtop {
-	margin-top: 200px;
+	margin-top: 300px;
 }
 
 .line {

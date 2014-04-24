@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Ronan Gao | Data Journalism</title>
+    <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="d3.v3.min.js" charset="utf-8"></script>
+    <script src="data.js" charset="utf-8"></script>
+
+  </head>
+  
+  <body>
+      <h1 id="name"><a href="index.html">ronan gao</a></h1>
+      
+      <h2 id="subhead"> Data Journalism @ Studio 20, NYU</h2>
+
+      <hr width="200px" align="left" color="#bbbbbb" size="1px">
+          
+          <div class = "charts">
+          </div>
+
+          <script type = "text/javascript">
+
+          var positions = 
+          [{"label":"Abdominoplasty","x":10,"y":10},
+          {"label":"Blepharoplasty","x":20,"y":20},
+          {"label":"Breast augmentation","x":30,"y":30},
+          {"label":"Breast lift","x":40,"y":40},
+          {"label":"Breast reduction (women)","x":50,"y":50},
+          {"label":"Buttock augmentation","x":60,"y":60},
+          {"label":"Buttock lift","x":70,"y":70},
+          {"label":"Chin augmentation","x":80,"y":80},
+          {"label":"Facelift","x":90,"y":90},
+          {"label":"Forehead lift","x":100,"y":100},
+          {"label":"Gynecomastia (male breast reduction)","x":110,"y":110},
+          {"label":"Lip augmentation","x":120,"y":120},
+          {"label":"Lipoplasty","x":130,"y":130},
+          {"label":"Lower body lift","x":140,"y":140},
+          {"label":"Otoplasty","x":150,"y":150},
+          {"label":"Rhinoplasty","x":160,"y":160},
+          {"label":"Thigh lift","x":170,"y":170},
+          {"label":"Upper arm lift","x":180,"y":180},
+          {"label":"Vaginal rejuvenation","x":190,"y":190},
+          {"label":"Total Surgical Procedures","x":200,"y":200}]
+
+
+
+           // normalize the surgeons by percent
+           surgery.forEach(function(d,i){
+            countrySum = d3.sum(d.surgery)
+            d.surgery = d.surgery.map(function(x) { return 100*x / countrySum; });
+           })
+
+            var svg = d3.select(".charts").selectAll("div")
+                .data(surgery)
+              .enter().append("div")
+                .attr("class", "thing")
+                .append("p").text(function(d){return d.country})
+             .append("svg")
+
+           var circles = svg.selectAll("circle")
+                 .data(function(d){return(d.surgery); return jsonCircles})
+               .enter()
+               .append("circle");
+
+          var color = d3.scale.threshold()
+              .domain([3, 5, 10, 15])
+              .range(["#fef0d9", "#fdcc8a", "#fc8d59", "#e34a33", "#b30000"]);
+
+           var circleAttributes = circles
+              .attr("cx", function (d, i) { return positions[i].x; })
+              .attr("cy", function (d, i) { return positions[i].y; })
+              .attr("r", function (d, i) { return 2*Math.sqrt(d); })
+              .style("fill", function(d) { return color(d); });
+
+          </script>
+
+
+    <hr width="200px" align="left" color="#bbbbbb" size="1px">
+
+
+    <footer>
+      <p class="footpara">
+        Ronan's public page for <a href="http://kpq.github.io/nyu-data-journalism-2014/" target="_blank"> Data Journalism</a> class at NYU
+      <p class="footpara">
+        <a href="http://kpq.github.io/nyu-data-journalism-2014/" target="_blank">Class Schedule</a> - <a href="https://github.com/kpq/nyu-data-journalism-2014/wiki/Class-wiki" target="_blank">Class Wiki</a> - <a href="">
+      </p>
+    </footer>
+  
+  </body>
+
+
+

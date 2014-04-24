@@ -1,3 +1,5 @@
+<style type="text/css">
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,7 +21,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
 	position: relative;
-	width: 80%;
+	width: 900px;
 	margin: auto;
 }
 
@@ -32,7 +34,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'helvetica', sans-serif;
+	font-family: 'Varela', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	color: #bbbbbb;
@@ -53,6 +55,10 @@ p {
 	font-style: normal;
 	color: #666666;
 	text-align: left; 
+}
+
+hr {
+	margin-bottom: 20px;
 }
 
 pre {
@@ -101,64 +107,6 @@ h1 #name a:visited {
 	color: #00C7E6;
 }
 
-#subhead {
-	font-weight: normal;
-}
-
-.hel {
-	font-family: 'helvetica', sans-serif;
-}
-
-.float-left {
-	float: left;
-}
-
-
-.week {
-	color: #999999;
-	width: 70px;
-}
-
-.contentsub {
-	width: 500px;
-	color: #68B8C4;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.padleft {
-	padding-left: 85px;
-}
-
-.mgtop {
-	margin-top: 200px;
-}
-
-.line {
-	color: #bbbbbb;
-	float: left;
-	width: 15px;
-}
-
-.content {
-	width: 80%;
-}
-
-.weeklist {
-	clear: left;
-	padding-top: 15px;
-}
-
-#divmain {
-	padding-top: 20px;
-	margin-bottom: 100px;
-}
-
-#divbody {
-	padding-top: 20px;
-	margin-bottom: 60px;
-}
-
 .para {
 	padding-bottom: 10px;
 	line-height: 160%;
@@ -182,7 +130,40 @@ h1 #name a:visited {
 	padding-bottom: 7px;
 }
 
-.pm20 {
-	padding-top: 20px;
-	padding-bottom: 20px;
+
+
+.charts {
+	width:900px;
+	margin: auto;
 }
+
+.thing {
+	border: 1px solid #ccc;
+	float: left;
+	padding: 10px;
+	width: 200;
+	height: 200px;
+	background-image:url("m/body.png");
+	background-size:200px 200px;
+	background-repeat:no-repeat;
+	background-position: bottom;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content:"";
+  display:table;
+}
+.clearfix:after {
+  clear:both;
+}
+.clearfix {
+  zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.footnote {
+	display:inline-block;
+}
+
+
+</style>
