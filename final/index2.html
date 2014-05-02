@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Ronan Gao | Data Journalism</title>
+    <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="d3.v3.min.js" charset="utf-8"></script>
+    <script src="data.js" charset="utf-8"></script>
+
+  </head>
+  
+  <body>
+      <h1 id="name"><a href="index.html">ronan gao</a></h1>
+      
+      <h2 id="subhead"> Data Journalism @ Studio 20, NYU</h2>
+
+      <hr width="200px" align="left" color="#bbbbbb" size="1px">
+          
+          <div class = "charts">
+          </div>
+
+          <script type = "text/javascript">
+
+          
+
+
+
+           // normalize the surgeons by percent
+           surgery.forEach(function(d,i){
+            countrySum = d3.sum(d.surgery)
+            d.surgery = d.surgery.map(function(x) { return 100*x / countrySum; });
+           })
+
+
+            var svg = d3.select(".charts").selectAll("div")
+                .data(surgery)
+              	.enter().append("div")
+                .attr("class", "thing")
+             	.append("svg")
+             	.attr("height","200px")
+             	.attr("width","200px")
+             	.attr('class', "cirlcecolor");
+                
+            var countryName = svg.append('text')
+                .text(function(d){return d.country})
+                .attr('x', 10)
+                .attr('y', 20);
+			
+			var color = d3.scale.threshold()
+              	.domain([3, 5, 10, 15])
+              	.range(["#fef0d9", "#fdcc8a", "#fc8d59", "#e34a33", "#b30000"]);
+
+           	var circles = svg.selectAll("circle")
+                .data(function(d){return d.surgery; })
+              	.enter()
+               	.append("circle")
+               	.attr("cx", function (d, i) { return positions[i].x; })
+              	.attr("cy", function (d, i) { return positions[i].y; })
+              	.attr("r", function (d) { return 2*Math.sqrt(d); })
+              	.style("fill", function(d) { return color(d); });
+
+          	
+
+
+          </script>
+
+
+    <hr width="200px" align="left" color="#bbbbbb" size="1px">
+
+
+    <footer>
+      <p class="footpara">
+        Ronan's public page for <a href="http://kpq.github.io/nyu-data-journalism-2014/" target="_blank"> Data Journalism</a> class at NYU
+      <p class="footpara">
+        <a href="http://kpq.github.io/nyu-data-journalism-2014/" target="_blank">Class Schedule</a> - <a href="https://github.com/kpq/nyu-data-journalism-2014/wiki/Class-wiki" target="_blank">Class Wiki</a> - <a href="">
+      </p>
+    </footer>
+  
+  </body>
+
+
+
