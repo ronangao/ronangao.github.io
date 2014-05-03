@@ -21,7 +21,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
 	position: relative;
-	width: 900px;
+	width: 1000px;
 	margin: auto;
 	font-family: helvetica;
 	font-weight: normal;
@@ -136,7 +136,7 @@ h1 #name a:visited {
 
 
 .charts {
-	width:900px;
+	width:1000px;
 	margin: auto;
 }
 
@@ -144,7 +144,7 @@ h1 #name a:visited {
 	border: 0px solid #ccc;
 	float: left;
 	padding: 10px;
-	width: 160px;
+	width: 120px;
 	height: 400px;
 	background-image:url("body2.png");
 	background-size:120px 400px;
@@ -195,7 +195,7 @@ fill: linear-gradient(to right, red , blue); /* Standard syntax */
 }
 
 .bar {
-  fill: #3896ab;
+  fill: #87EDDA;
 }
 
 .bar:hover {
@@ -208,7 +208,7 @@ fill: linear-gradient(to right, red , blue); /* Standard syntax */
 
 .d3-tip {
   line-height: 1;
-  padding: 12px;
+  padding: 8px;
   background: rgba(0, 0, 0, 0.7);
   color: #bbbbbb;
   border-radius: 2px;
@@ -229,6 +229,34 @@ fill: linear-gradient(to right, red , blue); /* Standard syntax */
 
 /* Style northward tooltips differently */
 .d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.d3-tip2 {
+  line-height: 1;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #bbbbbb;
+  border-radius: 3px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+/*.d3-tip2:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.7);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}*/
+
+/* Style northward tooltips differently */
+.d3-tip2.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
