@@ -21,6 +21,7 @@ body {
 	position: relative;
 	width: 80%;
 	margin: auto;
+	font-weight: normal;
 }
 
 h1 {
@@ -33,11 +34,12 @@ h1 {
 
 h2 {
 	font-family: helvetica, sans-serif;
-	font-size: 16px;
+	font-size: 15px;
 	font-style: normal;
 	color: #bbbbbb;
 	font-weight: normal;
 	padding-bottom: 10px;
+	letter-spacing: 0.4px;
 }
 
 h3 {
@@ -93,11 +95,10 @@ ul.sqli {
 }
 
 footer {
-	position: absolute;
-	left: 0px;
-	top: 700px;
-	margin-top: 20px;
 	margin-bottom: 20px;
+	clear: both;
+	position: relative;
+	top: 50px;
 }
 
 #name {
@@ -106,9 +107,9 @@ footer {
 	color: #DE526C;
 	font-weight: bold;
 	margin-bottom: 5px;
-	position: absolute;
-	left: 80px;
-	top: 20px;
+	position: relative;
+	left: 20px;
+	top: 16px;
 }
 
 h1 #name a:visited {
@@ -117,21 +118,22 @@ h1 #name a:visited {
 
 #subhead {
 	font-weight: normal;
-	position: absolute;
-	left: 80px;
-	top: 65px;
+	position: relative;
+	left: 20px;
+	top: 20px;
 }
 
 #logo {
-	position: absolute;
+	position: relative;
 	left: 0px;
 	top: 20px;
 }
 
 #headhr {
-	position: absolute;
+	position: relative;
 	left: 0px;
-	top: 100px;
+	top: 20px;
+	width: 100%;
 }
 
 .hel {
@@ -186,14 +188,16 @@ h1 #name a:visited {
 }
 
 #divmain {
-	padding-top: 50px;
-	margin-bottom: 200px;
+	position: relative;
+	top: 10px;
+	width: 100%;
 }
 
 #divbody {
-	position: absolute;
+	position: relative;
 	left: 0px;
-	top: 130px;
+	top: 30px;
+	width: 100%;
 }
 
 .para {
@@ -215,7 +219,7 @@ h1 #name a:visited {
 	font-family: helvetica, arial, sans-serif; 
 	font-size: 12px; 
 	font-style: normal;
-	color: #888888;
+	color: #aaaaaa;
 	text-align: left;
 	padding-bottom: 7px;
 }
