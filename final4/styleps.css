@@ -1,0 +1,319 @@
+<style type="text/css">
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-weight: normal;
+}
+
+body {
+	margin: auto;
+	width: 840px;
+	font-family: georgia, serif;
+	color: #666666;
+	font-weight: normal;
+	background-color: #fcfcfc;
+}
+
+h1 {
+	font-family: helvetica, arial, sans-serif; 
+	font-size: 36px; 
+	font-style: normal; 
+	font-weight: normal;
+	color: #00C7E6;
+	margin-bottom: 0px;
+}
+
+h2 {
+	font-family: helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	color: #bbbbbb;
+	font-weight: normal;
+	padding-bottom: 0px;
+}
+
+h3 {
+	font-family: georgia, serif;
+	font-size: 16px;
+	color: #666666;
+	margin: 20px 0 0 0;
+}
+
+h6 {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 0px;
+	margin: 0px;
+
+}
+
+p {
+	font-family: helvetica, arial, sans-serif; 
+	font-size: 16px; 
+	font-style: normal;
+	color: #666666;
+	text-align: left; 
+}
+
+hr {
+	margin-bottom: 20px;
+}
+
+pre {
+	font-family: arial;
+}
+
+#divmain {
+	margin: auto;
+	width: 100%;
+}
+
+a:link {
+	color:#82AAB8;
+	font-style: normal;
+	text-decoration: none;
+	font-weight: normal;
+
+} 
+
+a:visited {
+	color:#82AAB8;
+	font-style: normal;
+	text-decoration: none;
+} 
+
+a:hover {
+	color:#00C3FF;
+	font-style: normal;
+	text-decoration: none;
+} 
+
+ul.sqli {
+	list-style-type: square;
+	color: #999999;
+	padding-left: 20px;
+}
+
+footer {
+	float: left;
+	position: relative;
+	top: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 800px;
+}
+
+#name {
+	font-family: 'PT Serif', georgia, serif;
+	font-size: 36px;
+	color: #444444;
+	font-weight: bold;
+}
+
+#subhead {
+	font-family: 'Droid Serif', georgia, serif;
+	font-size: 14px;
+	color: #555555;
+}
+
+.article {
+	position: relative;
+	left: 100px;
+	width: 500px;
+	padding: 10px 0 20px 0;
+}
+
+.ptext {
+	font-family: georgia, serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: #333333;
+	padding: 5px 0px 5px 0px;
+}
+
+h1 #name a:visited {
+	color: #00C7E6;
+}
+
+.para {
+	padding-bottom: 10px;
+	line-height: 160%;
+}
+
+.divcap {
+	position: relative;
+	top: 20px;
+	clear: both;
+}
+
+.cap {
+	font-family: arial, sans-serif; 
+	font-size: 11px; 
+	color: #888888;
+	text-align: left;
+	margin-top: 0px;
+}
+
+.footpara {
+	font-family: helvetica, arial, sans-serif; 
+	font-size: 12px; 
+	font-style: normal;
+	color: #888888;
+	text-align: left;
+	padding-bottom: 7px;
+}
+
+
+
+.bodychart {
+	padding: 0px;
+	margin: 0px;
+}
+
+.thing {
+	border: 0px solid #ccc;
+	float: left;
+	padding: 10px;
+	width: 100px;
+	height: 400px;
+/*	background-image:url("body2.png");*/
+	background-size:120px 400px;
+	background-repeat:no-repeat;
+	background-position: bottom left;
+	overflow: visible;
+}
+
+svg {
+	overflow: visible;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content:"";
+  display:table;
+}
+.clearfix:after {
+  clear:both;
+}
+.clearfix {
+  zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.footnote {
+	display:inline-block;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #bbbbbb;
+  shape-rendering: crispEdges;
+}
+
+.axistext {
+	color: #cccccc;
+}
+
+.bar {
+  fill: #87EDDA;
+}
+
+.bar:hover {
+  fill: orange;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.d3-tip2 {
+  line-height: 1;
+  padding: 5px 10px 5px 10px;
+  background: rgba(255, 255, 255, 0.6);
+  color: gray;
+  border-radius: 3px;
+  border-color: gray;
+}
+
+.d3-tip2.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+
+
+.chart {
+	margin: 30px 0 0 0;
+	position: relative;
+	left: 10px;
+	width: 700px;
+}
+
+.chart rect {
+  fill: #58DBCC;
+}
+
+.chart text {
+  fill: #ffffff;
+  font: 12px sans-serif;
+  text-anchor: end;
+}
+
+
+
+
+.China {
+	background-image:url("bodychina.png");
+}
+
+.US {
+	background-image:url("bodyus.png");
+}
+
+.SouthKorea {
+	background-image:url("bodykorea.png");
+}
+
+.Mexico {
+	background-image:url("bodymexico.png");
+}
+
+.Brazil {
+	background-image:url("bodybrazil.png");
+}
+
+.Italy {
+	background-image:url("bodyitaly.png");
+}
+
+.Japan {
+	background-image:url("bodyjapan.png");
+}
+
+
+.cname {
+	width: 120px;
+	height: 20px;
+	float: left;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+</style>

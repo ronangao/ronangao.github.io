@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Ronan Gao | Data Journalism</title>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="styleps.css">
+    <script src="d3.v3.min.js" charset="utf-8"></script>
+    <script src="data.js" charset="utf-8"></script>
+    <script src="underscore.js" charset="utf-8"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+
+
+  </head>
+  
+  <body>
+    <h1 id="name">Reshaping the World</h1>
+      
+    <h2 id="subhead">by RONAN GAO  May 5, 2014</h2>
+
+    <hr width="200px" align="left" color="#bbbbbb" size="1px">
+
+    <div class="article">
+      
+    <p class="ptext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p class="ptext">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+
+    </div>
+
+    <div>
+
+        <h3>Top 5 procedures worldwide</h3>
+        
+        <div class = "bodychart">
+        </div>
+
+    		<div class="bodychart">
+
+          <div class="cname"><h6>Brazil</h6></div>
+          <div class="cname"><h6>China</h6></div>
+          <div class="cname"><h6>Italy</h6></div>
+          <div class="cname"><h6>Japan</h6></div>
+          <div class="cname"><h6>Mexico</h6></div>
+          <div class="cname"><h6>South Korea</h6></div>
+          <div class="cname"><h6>United States</h6></div>
+        </div>
+
+        
+          <p class="cap">* Placement of some procedure labels is approximate</p>
+        
+    <div class="article">
+      
+      <p class="ptext">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+
+    </div>
+			
+        <h3>Countries with top number of procedures per 10,000 people</h3>
+
+		    <div id="divmain">
+      		<svg class="chart"></svg>
+      	</div>
+
+      	<div class="divcap">
+      		<p class="cap">Source: International Society of Aesthetic Plastic Surgery & Population Reference Bureau</p>
+        </div>
+
+    </div>
+
+
+    <div class="article">
+      
+      <p class="ptext">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+
+      <p class="ptext">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+
+    </div>
+          
+        <script type = "text/javascript">
+
+           // normalize the surgeons by percent
+           // surgery.forEach(function(d,i){
+           //  countrySum = d3.sum(d.surgery)
+           //  d.surgery = d.surgery.map(function(x) { return 100*x / countrySum; });
+           // })
+
+
+            var tip = d3.tip()
+				      .attr('class', 'd3-tip2')
+				      .html(function(d,i) { 
+      					return "<span style='color: grey; font-family: helvetica; font-size: 12px; line-height: 20px'>" + positions[i]['label']+ "</span>" + "<br><span style='color: orange; font-family: helvetica; font-size: 14px'>"+d+"</span>";
+      				})
+      				.direction('e')
+      				.offset([0, 5]);
+
+            var svg = d3.select(".bodychart").selectAll("div")
+                .data(surgery)
+              	.enter().append("div")
+                .attr("class", function(d){
+                	return "thing "+d.country;
+                })
+             	.append("svg")
+             	.attr("height","400px")
+             	.attr("width","100px")
+             	.attr('class', "cirlcecolor")
+             	.call(tip);
+
+            var g = svg.selectAll('g')
+                    .append('g');
+
+
+//nonsurgical bubble
+            
+      var colornonsur = d3.scale.threshold()
+                .domain([30000, 90000, 150000, 210000])
+                .range(["rgba(64,168,237, 0.65)","rgba(64,168,237, 0.70)", "rgba(64,168,237, 0.75)", "rgba(64,168,237, 0.80)", "rgba(64,168,237, 0.85)"]);   
+
+            var circlesnonsur = g
+                .data(function(d){return d.nonsur; })
+                .enter()
+                .append("circle")
+                .attr('id', 'circle2')
+                .attr("cx", function (d, i) { return positionsnon[i].x; })
+                .attr("cy", function (d, i) { return positionsnon[i].y; })
+                .attr("r", function (d) { return  0.03*Math.sqrt(d); })
+                .style('fill', function(d){
+                  
+             return colornonsur(d);
+                })
+                .style('stroke', 'white')
+                .style('stroke-opacity', '0.7')
+
+                .on('mouseover', tip.show)
+            .on('mouseout', tip.hide);
+
+//surgical bubble
+            
+			var colorsur = d3.scale.threshold()
+              	.domain([70000, 90000, 150000, 210000])
+              	.range(["rgba(240,79,165, 0.75)","rgba(240,79,165, 0.80)", "rgba(240,79,165, 0.85)", "rgba(240,79,165, 0.90)", "rgba(240,79,165, 0.95)"]);   
+
+        //     var gradient = svg.append("defs")
+				    // .append("radialGradient")
+				    // .attr("id", "gradient");
+
+           	var circlesur = g
+                .data(function(d){return d.sur; })
+              	.enter()
+               	.append("circle")
+                .attr('id', 'circle1')
+               	.attr("cx", function (d, i) { return positions[i].x; })
+              	.attr("cy", function (d, i) { return positions[i].y; })
+              	.attr("r", function (d) { return 0.03*Math.sqrt(d); })
+              	.style('fill', function(d){
+              		
+				     return colorsur(d);
+              	})
+                .style('stroke', 'white')
+                .style('stroke-opacity', '0.7')
+              	.on('mouseover', tip.show)
+      			.on('mouseout', tip.hide);
+
+
+
+		
+// barchart
+			
+			var width = 420,
+			    barHeight = 20;
+
+			var x = d3.scale.linear()
+			    .range([0, width]);
+
+			var chart = d3.select(".chart")
+			    .attr("width", width);
+
+			d3.tsv("data.tsv", type, function(error, data) {
+			  x.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+			  chart.attr("height", barHeight * data.length);
+
+			  var bar = chart.selectAll("g")
+			      .data(data)
+			    .enter().append("g")
+			      .attr("transform", function(d, i) { return "translate(100," + i * barHeight + ")"; });
+
+			  bar.append("rect")
+			      .attr("width", function(d) { return x(d.value); })
+			      .attr("height", barHeight - 1);
+
+			  bar.append("text")
+			      .attr("x", function(d) { 
+			     	if (d.value <= 60) {return x(d.value) + 28; }
+			      	else {return x(d.value) - 3; } })
+			      .attr("y", barHeight / 2)
+			      .attr("dy", ".35em")
+			      .text(function(d) { return d.value; })
+			      .style('fill',function(d) {
+			      	if (d.value <= 60) {return 'gray'}
+			      		else {return 'white'};
+			      });
+
+
+			 bar.append("text")
+			      .attr("x", -10)
+			      .attr("y", barHeight / 2)
+			      .attr("dy", ".35em")
+			      .text(function(d) { return d.name; })
+			      .style('fill','gray');
+			});
+
+			function type(d) {
+			  d.value = +d.value; // coerce to number
+			  return d;
+			}
+
+        </script>
+  
+		<footer>
+			<hr width="200px" align="left" color="#bbbbbb" size="1px">
+			<p class="footpara">
+				Ronan's public page for <a href="http://kpq.github.io/nyu-data-journalism-2014/" target="_blank"> Data Journalism</a> class at NYU
+			<p class="footpara">
+				<a href="http://kpq.github.io/nyu-data-journalism-2014/" target="_blank">Class Schedule</a> - <a href="https://github.com/kpq/nyu-data-journalism-2014/wiki/Class-wiki" target="_blank">Class Wiki</a> - <a href="">
+			</p>
+		</footer>
+
+  </body>
+
+
+
+
+

@@ -75,7 +75,11 @@
 			
 			var color2 = d3.scale.threshold()
               	.domain([3, 5, 10, 15])
-              	.range(["#fef0d9", "#fdcc8a", "#fc8d59", "#e34a33", "#b30000"]);
+              	.range(["red", "green", "blue", "yellow", "orange"]);
+
+            var gradient = svg.append("defs")
+				    .append("radialGradient")
+				    .attr("id", "gradient");
 
            	var circles = svg.selectAll("circle")
                 .data(function(d){return d.surgery; })
@@ -84,30 +88,29 @@
                	.attr("cx", function (d, i) { return positions[i].x; })
               	.attr("cy", function (d, i) { return positions[i].y; })
               	.attr("r", function (d) { return 6*Math.sqrt(d); })
-              	.style('fill', 'url(#gradient)')
+              	.style('fill', function(d){
+              		
+				    gradient.attr("x1", "0%")
+				    .attr("y1", "0%")
+				    .attr("x2", "100%")
+				    .attr("y2", "100%");
+
+					gradient.append("stop")
+				    .attr("offset", "0%")
+				    .attr("stop-color", color2(d))
+				    .attr("stop-opacity", 1);
+
+					gradient.append("stop")
+				    .attr("offset", "100%")
+				    .attr("stop-color", color2(d))
+				    .attr("stop-opacity", 0);
+
+				    return 'url(#gradient)'
+              	})
               	.on('mouseover', tip.show)
       			.on('mouseout', tip.hide);
 
-			var gradient = svg.append("defs")
-			    .append("radialGradient")
-			    .attr("id", "gradient")
-			    .attr("x1", "0%")
-			    .attr("y1", "0%")
-			    .attr("x2", "100%")
-			    .attr("y2", "100%");
-
-				gradient.append("stop")
-			    .attr("offset", "0%")
-			    .attr("stop-color", function(d) { return color2(d); })
-			    .attr("stop-opacity", 1);
-
-				gradient.append("stop")
-			    .attr("offset", "100%")
-			    .attr("stop-color", function(d) { return color2(d); })
-			    .attr("stop-opacity", 0);
-
-			  console.log(color2(2));
-
+		
 // barchart
 			
 			var width = 420,
