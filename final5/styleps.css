@@ -184,6 +184,7 @@ h1 #name a:visited {
 .bodychart {
 	padding: 0px;
 	margin: 0px;
+	clear: both;
 }
 
 .thing {
@@ -200,6 +201,10 @@ h1 #name a:visited {
 }
 
 svg {
+	overflow: visible;
+}
+
+div {
 	overflow: visible;
 }
 
@@ -232,11 +237,12 @@ svg {
 }
 
 .bar {
-  fill: #87EDDA;
+  fill: #95E4E8;
 }
 
+
 .bar:hover {
-  fill: orange;
+	fill: #3AD1F0;
 }
 
 .x.axis path {
@@ -244,25 +250,69 @@ svg {
 }
 
 .d3-tip2 {
-  line-height: 1;
-  padding: 5px 10px 5px 10px;
-  background: rgba(255, 255, 255, 0.6);
-  color: gray;
-  border-radius: 3px;
-  border-color: gray;
+	line-height: 1;
+	padding: 5px 10px 5px 10px;
+	background: rgba(255, 255, 255, 0.7);
+	color: gray;
+	border-radius: 3px;
+	border-color: gray;
+}
+
+.d3-tip3-1 {
+	pointer-events: none;
+	line-height: 1;
+	padding: 5px 10px 5px 10px;
+	color: #aaaaaa;
+
+}
+
+.d3-tip3-2 {
+	line-height: 1;
+	padding: 5px 10px 5px 10px;
+	color: white;
+	pointer-events: none;
 }
 
 .d3-tip2.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
+	margin: -1px 0 0 0;
+	top: 100%;
+	left: 0;
 }
 
+
+
 .legend {
-	font-family: helvetica, arial, sans-serif;
+	width: 600px;
 	font-size: 14px;
 }
 
+#legsur {
+	width: 16px;
+	height: 16px;
+	background-color: #F04FA5;
+	border-radius: 8px;
+	border-color: white;
+	float: left;
+	margin: 14px 0 0 0;
+}
+
+#legnonsur {
+	width: 16px;
+	height: 16px;
+	background-color: #44DBB8;
+	border-radius: 8px;
+	border-color: white;
+	float: left;
+	margin: 14px 0 0 10px;
+}
+
+.legtext {
+	font-family: georgia, serif;
+	font-size: 14px;
+	padding-left: 10px;
+	padding-bottom: 0px;
+	float: left;
+}
 
 .chart {
 	margin: 30px 0 0 0;
@@ -271,9 +321,6 @@ svg {
 	width: 700px;
 }
 
-.chart rect {
-  fill: #58DBCC;
-}
 
 .chart text {
   fill: #ffffff;
@@ -320,5 +367,6 @@ svg {
 	text-align: left;
 	margin-bottom: 10px;
 }
+
 
 </style>
