@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="styleps.css">
     <script src="d3.v3.min.js" charset="utf-8"></script>
     <script src="data.js" charset="utf-8"></script>
-    <script src="underscore.js" charset="utf-8"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
@@ -17,73 +16,83 @@
   </head>
   
   <body>
-    <h1 id="name">Reshaping the World</h1>
-      
-    <h2 id="subhead">by RONAN GAO  May 5, 2014</h2>
+    <div class="main">
+      <h1 id="name">Reshaping the World</h1>
+        
+      <h2 id="subhead">by RONAN GAO  May 5, 2014</h2>
 
-    <hr width="200px" align="left" color="#bbbbbb" size="1px">
+      <hr width="200px" align="left" color="#bbbbbb" size="1px">
+    </div>
 
     <div class="article">
       
-    <p class="ptext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="ptext">The face of plastic surgery is changing. And there's supposed to be a paragraph, describing the landscape of plastic surgery.</p>
 
-    <p class="ptext">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+      <p class="ptext">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
 
     </div>
 
-    <div>
+    <div class="w100">
 
-        <h3>Top 5 procedures performed in top 7 countries</h3>
+      <div class="graphic">
+      
+        <h3>Countries with top number of procedures per 10,000 people, 2011</h3>
 
-        <div class="legend"></div>
-          
-          <div id="legsur"></div>
-          <p class="legtext">Surgical procedures</p>
-
-          <div id="legnonsur"></div>
-          <p class="legtext">Nonsurgical procedures</p>
-        
-        <div class="legend"></div>
-        
-        <div class = "bodychart">
+        <div id="divmain">
+          <div class="chart"></div>
         </div>
 
-    		<div class="bodychart">
-
-          <div class="cname"><h6>Brazil</h6></div>
-          <div class="cname"><h6>China</h6></div>
-          <div class="cname"><h6>Italy</h6></div>
-          <div class="cname"><h6>Japan</h6></div>
-          <div class="cname"><h6>Mexico</h6></div>
-          <div class="cname"><h6>South Korea</h6></div>
-          <div class="cname"><h6>United States</h6></div>
+        <div class="divcap">
+          <p class="cap">Source: International Society of Aesthetic Plastic Surgery & Population Reference Bureau</p>
         </div>
-        
-          <p class="cap">Source: International Society of Aesthetic Plastic Surgery</p>
-          <p class="cap">Placement of some procedure labels is approximate</p>
-        
+
+      </div>
+
+    </div>
+
     <div class="article">
       
       <p class="ptext">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
 
     </div>
-			
-        <h3>Countries with top number of procedures per 10,000 people</h3>
 
-		    <div id="divmain">
-      		<div class="chart"></div>
-      	</div>
 
-      	<div class="divcap">
-      		<p class="cap">Source: International Society of Aesthetic Plastic Surgery & Population Reference Bureau</p>
+    <div class="w100">
+      
+      <div class="graphic">
+
+        <h3>Top 5 procedures performed in top 7 countries, 2011</h3>
+
+        <div class="legend"></div>
+          
+          <div id="legsur"></div>
+            <p class="legtext">Surgical procedures</p>
+
+          <div id="legnonsur"></div>
+            <p class="legtext">Nonsurgical procedures</p>
+        
+        
+        <div class = "bodychart">
         </div>
+
+        <div class="bodychart">
+          <div class="cname"><h6>United States</h6></div>
+          <div class="cname"><h6>Brazil</h6></div>
+          <div class="cname"><h6>China</h6></div>
+          <div class="cname"><h6>Japan</h6></div>
+          <div class="cname"><h6>Mexico</h6></div>
+          <div class="cname"><h6>Italy</h6></div>
+          <div class="cname"><h6>South Korea</h6></div>
+        </div>
+        
+          <p class="cap">Source: International Society of Aesthetic Plastic Surgery<br>Placement of some procedure labels is approximate</p>
+      </div>
 
     </div>
 
-
     <div class="article">
       
-      <p class="ptext">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+      <p class="ptext">The quest for beauty is universal, but tastes can vary. There's supposed to be another paragraph explaining the difference between the tastes of people from different country.</p>
 
       <p class="ptext">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
 
@@ -122,7 +131,7 @@
                 })
              	.append("svg")
              	.attr("height","400px")
-             	.attr("width","100px")
+             	.attr("width","200px")
              	.attr('class', "cirlcecolor")
              	.call(tip1)
               .call(tip2);
@@ -142,8 +151,8 @@
                 .enter()
                 .append("circle")
                 .attr('id', 'circle2')
-                .attr("cx", function (d, i) { return positionsnon[i].x; })
-                .attr("cy", function (d, i) { return positionsnon[i].y; })
+                .attr("cx", function (d, i) { return positionsnon[i].x+10; })
+                .attr("cy", function (d, i) { return positionsnon[i].y-10; })
                 .attr("r", function (d) { return  0.03*Math.sqrt(d); })
                 .style('fill', function(d){
                   
@@ -170,7 +179,7 @@
               	.enter()
                	.append("circle")
                 .attr('id', 'circle1')
-               	.attr("cx", function (d, i) { return positions[i].x; })
+               	.attr("cx", function (d, i) { return positions[i].x+10; })
               	.attr("cy", function (d, i) { return positions[i].y; })
               	.attr("r", function (d) { return 0.03*Math.sqrt(d); })
               	.style('fill', function(d){
@@ -193,7 +202,13 @@
           barHeight = 20;
 
         var x = d3.scale.linear()
-            .range([0, width]);
+
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("top")
+            .ticks(2)
+            .tickValues([200,400])
+            .tickSize(barHeight*25);
 
         var svg2 = d3.select(".chart")
             .attr("width", width).append('svg');
@@ -206,10 +221,11 @@
               .direction('e');
 
 
-
-        x.domain([0, d3.max(data, function(d) { return d.value; })]);
+        x.domain([0, d3.max(data, function(d) { return d.value; })])
+          .range([0, d3.max(data, function(d) { return d.value; })]);
 
 			  svg2.attr("height", barHeight * data.length).call(tip3);
+
 
 			  var bar = svg2.selectAll("g")
 			      .data(data)
@@ -265,14 +281,28 @@
 			      .attr("y", barHeight / 2)
 			      .attr("dy", ".35em")
 			      .text(function(d) { return d.name; })
-			      .style('fill','gray')
-            ;
+			      .style('fill','gray');
+
+
+
+        svg2.append('g')
+          .attr("class", "axis")
+            .attr("transform", "translate(100," + barHeight*25 + ")")
+            .call(xAxis)
+            .selectAll('text')
+            .attr('y', -barHeight*25+14)
+            .attr('x',5)
+            .style('text-anchor', 'start');
 			});
+
+
+
 
 			function type(d) {
 			  d.value = +d.value; // coerce to number
 			  return d;
 			}
+
 
         </script>
   
@@ -280,7 +310,7 @@
 			<hr width="200px" align="left" color="#bbbbbb" size="1px">
 			<p class="footpara">
 				Ronan's public page for <a href="http://kpq.github.io/nyu-data-journalism-2014/" target="_blank"> Data Journalism</a> class at NYU
-			<p class="footpara">
+			<br>
 				<a href="http://kpq.github.io/nyu-data-journalism-2014/" target="_blank">Class Schedule</a> - <a href="https://github.com/kpq/nyu-data-journalism-2014/wiki/Class-wiki" target="_blank">Class Wiki</a> - <a href="">
 			</p>
 		</footer>

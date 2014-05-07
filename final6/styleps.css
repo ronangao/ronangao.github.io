@@ -21,11 +21,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
 	margin: auto;
-	width: 840px;
+	width: 100%;
 	font-family: georgia, serif;
 	color: #666666;
 	font-weight: normal;
-	background-color: #fcfcfc;
+	background-color: #eeeeee;
 }
 
 h1 {
@@ -48,7 +48,7 @@ h2 {
 
 h3 {
 	font-family: georgia, serif;
-	font-size: 16px;
+	font-size: 18px;
 	color: #666666;
 	margin: 20px 0 0 0;
 }
@@ -71,7 +71,7 @@ p {
 }
 
 hr {
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 }
 
 pre {
@@ -110,12 +110,10 @@ ul.sqli {
 }
 
 footer {
-	float: left;
 	position: relative;
-	top: 50px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	width: 800px;
+	top: 30px;
+	margin: auto;
+	width: 70%;
 }
 
 #name {
@@ -131,12 +129,17 @@ footer {
 	color: #555555;
 }
 
-.article {
-	position: relative;
-	left: 100px;
-	width: 500px;
-	padding: 10px 0 20px 0;
+.main {
+	width: 70%;
+	margin: auto;
 	clear: both;
+}
+
+.article {
+	width: 60%;
+	margin: auto;
+	clear: both;
+	padding: 20px 0 20px 0;
 }
 
 .ptext {
@@ -168,7 +171,7 @@ h1 #name a:visited {
 	color: #888888;
 	text-align: left;
 	margin-top: 0px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	clear: both;
 }
 
@@ -179,9 +182,16 @@ h1 #name a:visited {
 	color: #888888;
 	text-align: left;
 	padding-bottom: 7px;
+	line-height: 22px;
 }
 
-
+.w100 {
+	width: 100%;
+	margin: auto;
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
 
 .bodychart {
 	padding: 0px;
@@ -192,8 +202,7 @@ h1 #name a:visited {
 .thing {
 	border: 0px solid #ccc;
 	float: left;
-	padding: 10px;
-	width: 100px;
+	width: 120px;
 	height: 400px;
 /*	background-image:url("body2.png");*/
 	background-size:120px 400px;
@@ -202,8 +211,10 @@ h1 #name a:visited {
 	overflow: visible;
 }
 
-svg {
-	overflow: visible;
+.graphic {
+	width: 840px;
+	margin: auto;
+	padding-bottom: 20px;
 }
 
 div {
@@ -227,16 +238,13 @@ div {
 }
 
 
-.axis path,
-.axis line {
+#xaxis path,
+#xaxis line {
   fill: none;
   stroke: #bbbbbb;
   shape-rendering: crispEdges;
 }
 
-.axistext {
-	color: #cccccc;
-}
 
 .bar {
   fill: #95E4E8;
@@ -247,9 +255,7 @@ div {
 	fill: #3AD1F0;
 }
 
-.x.axis path {
-  display: none;
-}
+
 
 .d3-tip2 {
 	line-height: 1;
@@ -317,8 +323,8 @@ div {
 }
 
 .chart {
-	margin: 30px 0 0 0;
-	padding: 0 0 0 0;
+	margin: auto;
+	padding: 30px 0 0 0;
 	position: relative;
 	left: 10px;
 	width: 700px;
@@ -331,7 +337,20 @@ div {
   text-anchor: end;
 }
 
+.axis path {
+	fill: none;
+}
 
+.axis line {
+	fill: none;
+	stroke: #cccccc;
+	stroke-dasharray:2,2;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: #aaaaaa;
+}
 
 
 .China {
@@ -368,8 +387,13 @@ div {
 	height: 20px;
 	float: left;
 	text-align: left;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
+.cnamediv {
+	margin: 0px;
+	clear: both;
+	margin-bottom: 30px;
+}
 
 </style>
